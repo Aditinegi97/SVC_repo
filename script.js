@@ -7,8 +7,11 @@ function addTask() {
         li.textContent = taskInput.value;
 
         li.onclick = () => {
-            li.remove();
+            if (confirm("Are you sure you want to delete this task?")) {
+                li.remove();
+            }
         };
+        
 
         taskList.appendChild(li);
         taskInput.value = '';
